@@ -1,2 +1,2 @@
 # visiblegraph
-function of visiblegraph 
+function of visible-graph 
