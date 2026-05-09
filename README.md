@@ -2,9 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-時系列データを可視化グラフ（Visibility Graph）に変換するための Julia パッケージです。
+時系列データを可視化グラフ（Visibility Graph）に変換するための Julia スクリプトです。
 
-A Julia package for converting time series data into **Visibility Graphs**.
+A Julia script for converting time series data into **Visibility Graphs**.
 
 ## 可視化グラフ (Visibility Graph) とは
 
@@ -15,11 +15,21 @@ $$x_k < x_j + (x_i - x_j) \frac{j - k}{j - i}$$
 
 直感的には、時系列を棒グラフとして見たときに、点 $i$ の頂上から点 $j$ の頂上が「見える」場合に接続されます。
 
-## インストール (Installation)
+## セットアップ (Setup)
+
+このリポジトリは独立したパッケージとして構成されていないため、ファイルを直接ダウンロードして `include` してください。また、依存パッケージとして `Graphs` と `GraphPlot` が必要です。
 
 ```julia
 using Pkg
-Pkg.add(url="https://github.com/ryusei-nyaan/visiblegraph")
+Pkg.add(["Graphs", "GraphPlot"])
+
+using Downloads
+# スクリプトのダウンロード
+url = "https://raw.githubusercontent.com/ryusei-nyaan/visiblegraph/main/visiblegraph/src/visible_graph.jl"
+Downloads.download(url, "visible_graph.jl")
+
+# 読み込み
+include("visible_graph.jl")
 ```
 
 ## 使い方 (Usage)
