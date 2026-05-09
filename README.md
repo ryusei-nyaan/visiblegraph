@@ -17,11 +17,11 @@ $$x_k < x_j + (x_i - x_j) \frac{j - k}{j - i}$$
 
 ## セットアップ (Setup)
 
-このリポジトリは独立したパッケージとして構成されていないため、ファイルを直接ダウンロードして `include` してください。また、依存パッケージとして `Graphs` と `GraphPlot` が必要です。
+このリポジトリは独立したパッケージとして構成されていないため、ファイルを直接ダウンロードして `include` してください。また、依存パッケージとして `Graphs` と `GraphPlot` ,表示のために `Cairo`も必要です。
 
 ```julia
 using Pkg
-Pkg.add(["Graphs", "GraphPlot"])
+Pkg.add(["Graphs", "GraphPlot", "Cairo"])
 
 using Downloads
 # スクリプトのダウンロード
