@@ -1,3 +1,5 @@
+module visiblegraph
+
 using Graphs
 using GraphPlot
 
@@ -27,3 +29,6 @@ function visible_graph(x::AbstractVector{T}) where T<:Real
     end
     return g
 end
+
+
+end # module
